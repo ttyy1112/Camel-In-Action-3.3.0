@@ -7,6 +7,154 @@
     <groupId>com.atang.camel</groupId>
     <artifactId>spring-app</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>rest-camel-springboot-test</module>
+    </modules>
 
+    <properties>
+        <camel-version>3.6.0</camel-version>
+        <slf4j-version>1.7.30</slf4j-version>
+        <logback-version>1.2.3</logback-version>
+        <junit-version>4.13.1</junit-version>
+        <spring-boot-version>2.3.5.RELEASE</spring-boot-version>
+        <camel-starter-version>3.0.0-RC3</camel-starter-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-core -->
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-core</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback-version}</version>
+            </dependency>
+            <!-- Testing -->
+            <!-- https://mvnrepository.com/artifact/junit/junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-test -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-test</artifactId>
+                <version>${camel-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-test-spring -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-test-spring</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-test -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-test</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-ftp</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-quartz</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jetty</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-servlet</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <!-- testing -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-http</artifactId>
+                <version>${camel-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- to use xml -->
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jaxb</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <!-- camel -->
+            <!-- https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-spring-boot-starter -->
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-starter</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-servlet-starter</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <!-- to use json -->
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-jackson-starter</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <!-- testing -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-http-starter</artifactId>
+                <version>${camel-version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
