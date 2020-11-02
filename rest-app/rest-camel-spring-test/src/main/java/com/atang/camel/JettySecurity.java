@@ -5,7 +5,6 @@ import org.eclipse.jetty.security.ConstraintSecurityHandler;
 import org.eclipse.jetty.security.HashLoginService;
 import org.eclipse.jetty.security.authentication.BasicAuthenticator;
 import org.eclipse.jetty.util.security.Constraint;
-import org.springframework.stereotype.Component;
 
 /**
  * Setup Jetty security to use basic authentication for all the paths.
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Component;
  * In a real use-case you would use more stronger security or integrate to a LDAP or some other use-store.
  * But for this little example we load the users from a file.
  */
-@Component("securityHandler")
 public class JettySecurity {
 
     public static ConstraintSecurityHandler createSecurityHandler() {

@@ -3,13 +3,11 @@ package com.atang.camel.dummy;
 
 import com.atang.camel.Order;
 import com.atang.camel.OrderService;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Component("orderService")
 public class DummyOrderService implements OrderService {
 
     // in memory dummy order system
