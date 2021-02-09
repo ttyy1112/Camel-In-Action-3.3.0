@@ -1,6 +1,8 @@
 package com.atang.camel;
 
 import org.apache.camel.CamelContext;
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 
@@ -25,13 +27,22 @@ public class FtpScanner {
                         "startScheduler=true")
                         .log("receive message body ${body}");
 
+                final String path = "/Users/tanghonggang1/IdeaProjects/Camel-In-Action-3.3.0/java-app/ftp-component/src/main/resources/";
                 // 启用默认ScheduledPollConsumerScheduler
                 from("ftp://ftptest99@11.80.9.214:21/test2?" +
                         "passiveMode=true&" +
                         "password=ftptest99&" +
                         "initialDelay=1000&" +
                         "delay=2000&" +
-                        "startScheduler=true")
+                        "startScheduler=true&" +
+                        "localWorkDirectory=" + path)
+                        .process(new Processor() {
+                            @Override
+                            public void process(Exchange exchange) throws Exception {
+                                final Object body = exchange.getIn().getBody();
+                                System.out.println(body);
+                            }
+                        })
                         .log("receive message body ${body}");
             }
         });
@@ -44,5 +55,7 @@ public class FtpScanner {
         // stop the CamelContext
         context.stop();
     }
+
+
 
 }
