@@ -18,6 +18,9 @@
         <module>route-definition</module>
         <module>route-lifecycle</module>
         <module>seda-component</module>
+        <module>error-handler</module>
+        <module>interceptor</module>
+        <module>processor-argument</module>
     </modules>
 
     <properties>
