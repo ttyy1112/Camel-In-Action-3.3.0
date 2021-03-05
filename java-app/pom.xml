@@ -21,6 +21,7 @@
         <module>error-handler</module>
         <module>interceptor</module>
         <module>processor-argument</module>
+        <module>on-exception</module>
     </modules>
 
     <properties>
