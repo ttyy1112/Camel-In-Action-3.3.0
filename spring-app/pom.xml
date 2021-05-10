@@ -11,6 +11,8 @@
 
     <modules>
         <module>rest-camel-springboot-test</module>
+        <module>rest-camel-map-type</module>
+        <module>rest-camel-string-type</module>
     </modules>
 
     <properties>
@@ -126,6 +128,11 @@
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-jackson-starter</artifactId>
+                <version>${camel-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-jaxb-starter</artifactId>
                 <version>${camel-version}</version>
             </dependency>
             <!-- testing -->

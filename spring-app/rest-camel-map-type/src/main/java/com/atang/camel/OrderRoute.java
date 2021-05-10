@@ -2,7 +2,6 @@ package com.atang.camel;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
-import org.springframework.http.MediaType;
 
 public class OrderRoute extends RouteBuilder {
     @Override
@@ -50,13 +49,13 @@ public class OrderRoute extends RouteBuilder {
         // rest services under the orders context-path
         rest("/orders")
                 // need to specify the POJO types the binding is using (otherwise json binding defaults to Map based)
-                .get("{id}").bindingMode(RestBindingMode.off).outType(Order.class)
+                .get("{id}").bindingMode(RestBindingMode.auto)
                 .to("bean:orderService?method=getOrder(${header.id})")
                 // need to specify the POJO types the binding is using (otherwise json binding defaults to Map based)
-                .post().bindingMode(RestBindingMode.off).type(Order.class)
+                .post().consumes("application/xml").bindingMode(RestBindingMode.auto)
                 .to("bean:orderService?method=createOrder")
                 // need to specify the POJO types the binding is using (otherwise json binding defaults to Map based)
-                .put().type(Order.class)
+                .put()
                 .to("bean:orderService?method=updateOrder")
                 .delete("{id}")
                 .to("bean:orderService?method=cancelOrder(${header.id})");

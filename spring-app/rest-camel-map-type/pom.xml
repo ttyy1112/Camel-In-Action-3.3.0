@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rest-camel-springboot-test</artifactId>
-
+    <artifactId>rest-camel-map-type</artifactId>
     <dependencies>
         <!-- Spring Boot -->
         <dependency>
@@ -82,4 +81,5 @@
             <version>3.6.0</version>
         </dependency>
     </dependencies>
+
 </project>

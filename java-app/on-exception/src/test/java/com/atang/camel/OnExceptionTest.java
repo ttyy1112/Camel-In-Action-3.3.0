@@ -33,10 +33,25 @@ public class OnExceptionTest extends CamelTestSupport {
                         .bean(OrderServiceBean.class, "handleOrder");
             }
         });
+
+        context.addRoutes(new RouteBuilder() {
+            @Override
+            public void configure() throws Exception {
+                context.setTracing(true);
+
+                onException(Exception.class).maximumRedeliveries(6);
+                onException(OrderFailedException.class).maximumRedeliveries(3);
+
+                from("direct:order1")
+                        .onException(Exception.class).maximumRedeliveries(10).end()
+                        .bean(OrderServiceBean.class, "handleOrder");
+            }
+        });
         context.start();
 
         try {
             template.requestBody("direct:order", "ActiveMQ in Action");
+            template.requestBody("direct:order1", "ActiveMQ in Action");
             fail("Should throw an exception");
 
             Thread.sleep(10000l);

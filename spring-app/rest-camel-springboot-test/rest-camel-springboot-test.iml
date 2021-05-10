@@ -85,6 +85,10 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.4.31.v20200723" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel.springboot:camel-jackson-starter:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-jackson:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.camel.springboot:camel-jaxb-starter:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.camel:camel-jaxb:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.camel:camel-xml-jaxp:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:2.3.5.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test:2.3.5.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.3.5.RELEASE" level="project" />
@@ -151,7 +155,6 @@
     <orderEntry type="library" name="Maven: org.apache.camel:camel-xpath:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-xslt:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-spring:3.6.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.camel:camel-xml-jaxp:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-management-api:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-core-xml:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.2.9.RELEASE" level="project" />
@@ -171,7 +174,6 @@
     <orderEntry type="library" name="Maven: org.apache.camel:camel-base:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-util:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-xml-jaxb:3.6.0" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.sun.activation:jakarta.activation:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-joda:2.11.3" level="project" />

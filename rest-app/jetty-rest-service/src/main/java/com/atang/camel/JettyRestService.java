@@ -21,7 +21,10 @@ public class JettyRestService {
                         .component("jetty").port(8080)
                         // use a smaller thread pool in jetty as we do not have so high demand yet
                         .componentProperty("minThreads", "1")
-                        .componentProperty("maxThreads", "8");
+                        .componentProperty("maxThreads", "8")
+                        .apiContextPath("/api-doc")
+                        .apiProperty("api.path", "/a")
+                ;
                 // to setup jetty to use the security handler
 //                        .endpointProperty("handlers", "#securityHandler");
 
@@ -40,7 +43,7 @@ public class JettyRestService {
         // start the route and let it do its work
         context.start();
 
-        Thread.sleep(100000);
+        Thread.sleep(1000000);
 
         // stop the CamelContext
         context.stop();

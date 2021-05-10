@@ -99,6 +99,12 @@
                 <artifactId>camel-jaxb</artifactId>
                 <version>${camel-version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-rest-starter</artifactId>
+                <version>${camel-version}</version>
+                <!-- use the same version as your Camel core version -->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
