@@ -14,12 +14,12 @@ public class JdbcDemo {
 
     public static void main(String args[]) throws Exception {
         // create CamelContext
-        final String url = "jdbc:mysql://gate.local.jed.jddb.com:3306/jd_eis?useUnicode=true&characterEncoding=UTF-8";
+        final String url = "";
 
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        basicDataSource.setUsername("jd_eis_admin");
-        basicDataSource.setPassword("CSzwF2aDR9K1_LBW");
+        basicDataSource.setUsername("");
+        basicDataSource.setPassword("");
         basicDataSource.setUrl(url);
         //basicDataSource.setMaxActive(50); //最大活动数
         basicDataSource.setMaxIdle(20); //最大空闲数
