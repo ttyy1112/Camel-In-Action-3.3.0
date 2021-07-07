@@ -11,6 +11,7 @@
         <module>poll-enrich</module>
         <module>split</module>
         <module>jdbc</module>
+        <module>choice</module>
     </modules>
     <packaging>pom</packaging>
 
