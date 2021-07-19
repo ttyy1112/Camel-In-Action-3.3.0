@@ -43,14 +43,19 @@ public class OnExceptionTest extends CamelTestSupport {
                 onException(OrderFailedException.class).maximumRedeliveries(3);
 
                 from("direct:order1")
-                        .onException(Exception.class).maximumRedeliveries(10).end()
-                        .bean(OrderServiceBean.class, "handleOrder");
+                        .onException(OrderFailedException.class).process(exchange -> System.out.println("error")).end()
+                        .bean(OrderServiceBean.class, "handleOrder")
+                        .bean(OrderServiceBean.class, "handleOrder1")
+                        .onException(OrderFailedException.class).process(exchange -> System.out.println("error-1")).end()
+                        .process(exchange -> {
+                            System.out.println("not here!");
+                        });
             }
         });
         context.start();
 
         try {
-            template.requestBody("direct:order", "ActiveMQ in Action");
+//            template.requestBody("direct:order", "ActiveMQ in Action");
             template.requestBody("direct:order1", "ActiveMQ in Action");
             fail("Should throw an exception");
 

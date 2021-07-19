@@ -8,6 +8,16 @@ import java.net.ConnectException;
 public class OrderServiceBean {
 
     public String handleOrder(String body, @PropertyInject("A") String A) throws OrderFailedException {
+//        System.out.println("handler order!");
+//
+//        if (body.contains("ActiveMQ")) {
+//            throw new OrderFailedException("Cannot order ActiveMQ");
+//        }
+
+        return body + ",id=123";
+    }
+
+    public String handleOrder1(String body, @PropertyInject("A") String A) throws OrderFailedException {
         System.out.println("handler order!");
 
         if (body.contains("ActiveMQ")) {
