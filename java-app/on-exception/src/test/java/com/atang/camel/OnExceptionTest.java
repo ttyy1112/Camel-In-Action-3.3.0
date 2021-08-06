@@ -25,7 +25,7 @@ public class OnExceptionTest extends CamelTestSupport {
             public void configure() throws Exception {
                 context.setTracing(true);
 
-                onException(Exception.class).maximumRedeliveries(6);
+                onException(Exception.class).onWhen(exchange -> true).maximumRedeliveries(6).onWhen(exchange -> true).log("hi").end();
                 onException(OrderFailedException.class).maximumRedeliveries(3);
 
                 from("direct:order")
@@ -41,6 +41,7 @@ public class OnExceptionTest extends CamelTestSupport {
 
                 onException(Exception.class).maximumRedeliveries(6);
                 onException(OrderFailedException.class).maximumRedeliveries(3);
+
 
                 from("direct:order1")
                         .onException(OrderFailedException.class).process(exchange -> System.out.println("error")).end()
